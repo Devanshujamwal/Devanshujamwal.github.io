@@ -1,0 +1,27 @@
+Python Library Management System — repository verification
+Reviewed: 2026-09-21
+Command: python test_book.py
+Runtime: 3.12.14
+Exit code: 0
+Source: https://github.com/Devanshujamwal/Library-management-system
+book.py blob: 6332eab7eef7420ed4b97c5b3a9859eb7f43f5a2
+test_book.py blob: d64cd2dfd60208aa0e73533bdbe2b09cfbe8c56a
+
+Scope: supplied print-based Book checks, executed during portfolio review.
+This is not a full application test or a claim about the original submission.
+
+*** Test 1 Output ***
+ISBN: 978-0441172719 
+Title: Dune 
+Author: Frank Herbert 
+Genre: Science Fiction 
+Availability: Borrowed
+
+*** Test 2 Output ***
+Found a match... Title: The City of Ember , ISBN: 978-0375822742
+
+*** Test 3/Final Output ***
+ISBN           Title                     Author                    Genre                Availability
+978-0441172719 Dune                      Frank Herbert             Science Fiction      Borrowed
+978-0375822742 The City of Ember         Jeanne DuPrau             Young Adult          Available
+978-0394800165 Green Eggs and Ham        Dr. Seuss                 Children’s Fiction   Available
