@@ -1,0 +1,57 @@
+name: Build portfolio
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "source/**"
+      - ".github/workflows/build-portfolio.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: portfolio-root-build
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.25.0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: source/pnpm-lock.yaml
+
+      - name: Install dependencies
+        working-directory: source
+        run: pnpm install --frozen-lockfile
+
+      - name: Type check
+        working-directory: source
+        run: pnpm typecheck
+
+      - name: Build static site
+        working-directory: source
+        env:
+          NEXT_PUBLIC_BASE_PATH: ""
+        run: pnpm build:static
+
+      - name: Publish generated site to repository root
+        run: |
+          rm -rf index.html index.txt 404.html 404 _next _not-found projects favicon.svg file.svg globe.svg window.svg __next.__PAGE__.txt __next._full.txt __next._tree.txt styles.css
+          cp -R source/out/. .
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Build portfolio site"
+          git push origin main

@@ -1,14 +1,11 @@
-# Devanshu Jamwal Portfolio Redirect
+# Devanshu Jamwal — IT Portfolio
 
-The canonical portfolio is:
+Source and generated static site for my personal IT portfolio.
 
-**https://devanshujamwal.github.io/Devanshujamwal/**
+**Live site:** https://devanshujamwal.github.io/
 
-This repository only redirects visitors to the canonical portfolio so there is one consistent public site.
+The portfolio source lives in `/source`. GitHub Actions builds the static site and publishes it at the repository root.
 
-## Featured case studies
+## Focus
 
-- Enterprise Multi-Site Network Infrastructure
-- Microsoft Azure Cloud Infrastructure Lab
-- Security Monitoring & Threat Detection Lab
-- Python Library Management System
+IT Support · Systems · Networking · Cloud · Security Monitoring
