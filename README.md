@@ -1,18 +1,14 @@
 # Devanshu Jamwal — IT Portfolio
 
-Source for my personal IT infrastructure portfolio.
+Personal technical portfolio for IT Support, Systems, Networking, Cloud, and Security roles.
 
 **Live site:** https://devanshujamwal.github.io/
 
-## Focus
+The site uses a lightweight static implementation of the original portfolio design so GitHub Pages can serve it directly from the repository root without a framework build dependency.
 
-IT Support · Systems · Networking · Microsoft Azure · Security Monitoring
-
-## Featured projects
+## Featured case studies
 
 - Enterprise Multi-Site Network Infrastructure
 - Microsoft Azure Cloud Infrastructure Lab
 - Security Monitoring & Threat Detection Lab
 - Python Library Management System
-
-The site is intentionally lightweight and static so it loads quickly and remains easy to maintain on GitHub Pages.
